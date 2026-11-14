@@ -1,0 +1,42 @@
+// Export pages
+export '/pages/login_page/login_page_widget.dart' show LoginPageWidget;
+export '/pages/agenda/agenda_page/agenda_page_widget.dart'
+    show AgendaPageWidget;
+export '/pages/clientas/clienta_page/clienta_page_widget.dart'
+    show ClientaPageWidget;
+export '/pages/sin_cuenta/reserva_cita_s_c/reserva_cita_s_c_widget.dart'
+    show ReservaCitaSCWidget;
+export '/pages/sin_cuenta/cita_registrada_s_c/cita_registrada_s_c_widget.dart'
+    show CitaRegistradaSCWidget;
+export '/pages/sin_cuenta/mis_citas_s_c/mis_citas_s_c_widget.dart'
+    show MisCitasSCWidget;
+export '/pages/agenda/detalle_cita_page/detalle_cita_page_widget.dart'
+    show DetalleCitaPageWidget;
+export '/pages/cobros/cobros_page/cobros_page_widget.dart'
+    show CobrosPageWidget;
+export '/pages/inventario/inventario_page/inventario_page_widget.dart'
+    show InventarioPageWidget;
+export '/pages/administracion/horarios/horarios_page/horarios_page_widget.dart'
+    show HorariosPageWidget;
+export '/pages/sin_cuenta/cobro_detalle_page/cobro_detalle_page_widget.dart'
+    show CobroDetallePageWidget;
+export '/pages/administracion/servicios/servicios/servicios_widget.dart'
+    show ServiciosWidget;
+export '/pages/administracion/personal/personal_y_roles/personal_y_roles_widget.dart'
+    show PersonalYRolesWidget;
+export '/pages/administracion/reportes/s_historial_financiero/s_historial_financiero_widget.dart'
+    show SHistorialFinancieroWidget;
+export '/pages/inventario/s_inventario/s_inventario_widget.dart'
+    show SInventarioWidget;
+export '/pages/sin_cuenta/clienta_detalle_page/clienta_detalle_page_widget.dart'
+    show ClientaDetallePageWidget;
+export '/pages/administracion/administracion_page/administracion_page_widget.dart'
+    show AdministracionPageWidget;
+export '/pages/administracion/personal/new_user/new_user_widget.dart'
+    show NewUserWidget;
+export '/pages/clientas/new_cliente/new_cliente_widget.dart'
+    show NewClienteWidget;
+export '/pages/clientas/detalle_cliente/detalle_cliente_widget.dart'
+    show DetalleClienteWidget;
+export '/pages/clientas/modificar_cliente/modificar_cliente_widget.dart'
+    show ModificarClienteWidget;

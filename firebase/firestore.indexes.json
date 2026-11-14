@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "horarios_personal",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "personal",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "orden",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}
