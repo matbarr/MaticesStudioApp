@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819189256732",
+    "project_id": "matices-studio-app-g4mx7a",
+    "storage_bucket": "matices-studio-app-g4mx7a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819189256732:android:70cca69057108c9e9985d9",
+        "android_client_info": {
+          "package_name": "com.gruposeis.maticesstudioapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQKc8VAFKozd7WsH0c3vZ7isYWpf-l8gg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
