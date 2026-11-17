@@ -34,9 +34,7 @@ export '/pages/administracion/administracion_page/administracion_page_widget.dar
     show AdministracionPageWidget;
 export '/pages/administracion/personal/new_user/new_user_widget.dart'
     show NewUserWidget;
-export '/pages/clientas/new_cliente/new_cliente_widget.dart'
-    show NewClienteWidget;
-export '/pages/clientas/detalle_cliente/detalle_cliente_widget.dart'
-    show DetalleClienteWidget;
-export '/pages/clientas/modificar_cliente/modificar_cliente_widget.dart'
-    show ModificarClienteWidget;
+export '/pages/clientas/new_clienta/new_clienta_widget.dart'
+    show NewClientaWidget;
+export '/pages/clientas/modificar_clienta/modificar_clienta_widget.dart'
+    show ModificarClientaWidget;

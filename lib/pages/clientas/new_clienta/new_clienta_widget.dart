@@ -11,28 +11,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'new_cliente_model.dart';
-export 'new_cliente_model.dart';
+import 'new_clienta_model.dart';
+export 'new_clienta_model.dart';
 
-class NewClienteWidget extends StatefulWidget {
-  const NewClienteWidget({super.key});
+class NewClientaWidget extends StatefulWidget {
+  const NewClientaWidget({super.key});
 
-  static String routeName = 'NewCliente';
-  static String routePath = '/newCliente';
+  static String routeName = 'NewClienta';
+  static String routePath = '/newClienta';
 
   @override
-  State<NewClienteWidget> createState() => _NewClienteWidgetState();
+  State<NewClientaWidget> createState() => _NewClientaWidgetState();
 }
 
-class _NewClienteWidgetState extends State<NewClienteWidget> {
-  late NewClienteModel _model;
+class _NewClientaWidgetState extends State<NewClientaWidget> {
+  late NewClientaModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => NewClienteModel());
+    _model = createModel(context, () => NewClientaModel());
 
     _model.nombreCampoTextController ??= TextEditingController();
     _model.nombreCampoFocusNode ??= FocusNode();
@@ -878,7 +878,7 @@ class _NewClienteWidgetState extends State<NewClienteWidget> {
                                 .set(createClientasRecordData(
                                   nombre: _model.nombreCampoTextController.text,
                                   telefono:
-                                      '${_model.codigoCampoTextController.text}${_model.telefonoCampoTextController.text}',
+                                      _model.telefonoCampoTextController.text,
                                   activo: true,
                                   apellidos:
                                       _model.apellidosCamposTextController.text,
@@ -888,6 +888,10 @@ class _NewClienteWidgetState extends State<NewClienteWidget> {
                                   fechaRegistro: getCurrentTimestamp,
                                   fechaActualizacion: getCurrentTimestamp,
                                   registradoPor: currentUserReference,
+                                  codigoPais:
+                                      _model.codigoCampoTextController.text,
+                                  telefonoNormalizado:
+                                      '${_model.codigoCampoTextController.text} ${_model.telefonoCampoTextController.text}',
                                 ));
                             await showDialog(
                               barrierColor: Color(0x3F8C9088),

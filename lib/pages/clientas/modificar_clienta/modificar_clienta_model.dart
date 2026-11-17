@@ -1,11 +1,11 @@
 import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'detalle_cliente_widget.dart' show DetalleClienteWidget;
+import 'modificar_clienta_widget.dart' show ModificarClientaWidget;
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class DetalleClienteModel extends FlutterFlowModel<DetalleClienteWidget> {
+class ModificarClientaModel extends FlutterFlowModel<ModificarClientaWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for NombreCampo widget.
