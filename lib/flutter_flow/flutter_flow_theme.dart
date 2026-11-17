@@ -3,33 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
-
-const kThemeModeKey = '__theme_mode__';
-
-SharedPreferences? _prefs;
-
 abstract class FlutterFlowTheme {
-  static Future initialize() async =>
-      _prefs = await SharedPreferences.getInstance();
-
-  static ThemeMode get themeMode {
-    final darkMode = _prefs?.getBool(kThemeModeKey);
-    return darkMode == null
-        ? ThemeMode.system
-        : darkMode
-            ? ThemeMode.dark
-            : ThemeMode.light;
-  }
-
-  static void saveThemeMode(ThemeMode mode) => mode == ThemeMode.system
-      ? _prefs?.remove(kThemeModeKey)
-      : _prefs?.setBool(kThemeModeKey, mode == ThemeMode.dark);
-
   static FlutterFlowTheme of(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark
-        ? DarkModeTheme()
-        : LightModeTheme();
+    return LightModeTheme();
   }
 
   @Deprecated('Use primary instead')
@@ -60,7 +36,7 @@ abstract class FlutterFlowTheme {
   late Color colorSecundarioTextos;
   late Color background;
   late Color botonesYEnlaces;
-  late Color lightVibrantColor;
+  late Color colorBorde;
   late Color darkVibrantColor;
   late Color confirmadaColor;
   late Color pendienteColor;
@@ -71,7 +47,6 @@ abstract class FlutterFlowTheme {
   late Color etiquetaColor;
   late Color avisoColor;
   late Color avisoTextColor;
-  late Color containerColor;
 
   FFDesignTokens get designToken => FFDesignTokens(this);
 
@@ -185,21 +160,20 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color info = const Color(0xFFFFFFFF);
 
   late Color colorPrincipalTextos = const Color(0xFF38232D);
-  late Color colorSecundarioTextos = const Color(0xFF8C9088);
-  late Color background = const Color(0xFFF0EEE0);
+  late Color colorSecundarioTextos = const Color(0xFF968489);
+  late Color background = const Color(0xFFF6F1EA);
   late Color botonesYEnlaces = const Color(0xFF984060);
-  late Color lightVibrantColor = const Color(0xFF81B4E9);
-  late Color darkVibrantColor = const Color(0xFFA93532);
-  late Color confirmadaColor = const Color(0xFF9FEE90);
-  late Color pendienteColor = const Color(0xFFE9DE68);
-  late Color canceladaColor = const Color(0xFFF46A6F);
-  late Color completadaColor = const Color(0xFFD3DFD4);
-  late Color estadoTextColor = const Color(0x802D2127);
-  late Color cardColor = const Color(0xFFF9F8EE);
-  late Color etiquetaColor = const Color(0xFFEFE5E3);
-  late Color avisoColor = const Color(0xFFFAEBC8);
-  late Color avisoTextColor = const Color(0xFF8A6100);
-  late Color containerColor = const Color(0xFFF9F8EE);
+  late Color colorBorde = const Color(0xFFE9C9D3);
+  late Color darkVibrantColor = const Color(0xFF6E3048);
+  late Color confirmadaColor = const Color(0xFFB8D9B0);
+  late Color pendienteColor = const Color(0xFFF1D58A);
+  late Color canceladaColor = const Color(0xFFE9A0A5);
+  late Color completadaColor = const Color(0xFFB7C9C0);
+  late Color estadoTextColor = const Color(0x8C2D2429);
+  late Color cardColor = const Color(0xFFFFFCF8);
+  late Color etiquetaColor = const Color(0xFFF0E1E5);
+  late Color avisoColor = const Color(0xFFFFF0D1);
+  late Color avisoTextColor = const Color(0xFF805A16);
 }
 
 abstract class Typography {
@@ -380,49 +354,6 @@ class ThemeTypography extends Typography {
         fontWeight: FontWeight.w600,
         fontSize: 14.0,
       );
-}
-
-class DarkModeTheme extends FlutterFlowTheme {
-  @Deprecated('Use primary instead')
-  Color get primaryColor => primary;
-  @Deprecated('Use secondary instead')
-  Color get secondaryColor => secondary;
-  @Deprecated('Use tertiary instead')
-  Color get tertiaryColor => tertiary;
-
-  late Color primary = const Color(0xFF4B39EF);
-  late Color secondary = const Color(0xFF39D2C0);
-  late Color tertiary = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFF262D34);
-  late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF95A1AC);
-  late Color primaryBackground = const Color(0xFF1D2428);
-  late Color secondaryBackground = const Color(0xFF14181B);
-  late Color accent1 = const Color(0x4C4B39EF);
-  late Color accent2 = const Color(0x4D39D2C0);
-  late Color accent3 = const Color(0x4DEE8B60);
-  late Color accent4 = const Color(0xB2262D34);
-  late Color success = const Color(0xFF249689);
-  late Color warning = const Color(0xFFF9CF58);
-  late Color error = const Color(0xFFFF5963);
-  late Color info = const Color(0xFFFFFFFF);
-
-  late Color colorPrincipalTextos = const Color(0xFF38232D);
-  late Color colorSecundarioTextos = const Color(0xFF8C9088);
-  late Color background = const Color(0xFFF0EEE0);
-  late Color botonesYEnlaces = const Color(0xFF984060);
-  late Color lightVibrantColor = const Color(0xFF81B4E9);
-  late Color darkVibrantColor = const Color(0xFFA93532);
-  late Color confirmadaColor = const Color(0xFF204E17);
-  late Color pendienteColor = const Color(0xFF3D9F0A);
-  late Color canceladaColor = const Color(0xFF475E65);
-  late Color completadaColor = const Color(0xFF5A368C);
-  late Color estadoTextColor = const Color(0xFF18C216);
-  late Color cardColor = const Color(0xFFF9F8EE);
-  late Color etiquetaColor = const Color(0xFFEFE5E3);
-  late Color avisoColor = const Color(0xFFFAEBC8);
-  late Color avisoTextColor = const Color(0xFF8A6100);
-  late Color containerColor = const Color(0xFF267648);
 }
 
 class FFDesignTokens {

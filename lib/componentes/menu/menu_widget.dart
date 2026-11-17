@@ -48,28 +48,28 @@ class _MenuWidgetState extends State<MenuWidget> {
       children: [
         Divider(
           thickness: 2.0,
-          color: FlutterFlowTheme.of(context).alternate,
+          color: FlutterFlowTheme.of(context).colorBorde,
         ),
         Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: (FFMainAxisAlignment.center).flutterValue,
+            mainAxisAlignment: (FFMainAxisAlignment.spaceEvenly).flutterValue,
             crossAxisAlignment: (FFCrossAxisAlignment.center).flutterValue,
             textBaseline: TextBaseline.alphabetic,
             children: [
               FFButtonWidget(
                 onPressed: () async {
-                  FFAppState().paginaActual = 'Agenda';
+                  FFAppState().paginaActual = 'agenda';
                   safeSetState(() {});
 
                   context.pushNamed(AgendaPageWidget.routeName);
                 },
                 text: 'Agenda',
                 options: FFButtonOptions(
-                  width: MediaQuery.sizeOf(context).width * 0.18,
+                  width: MediaQuery.sizeOf(context).width * 0.22,
                   height: 40.0,
-                  padding: EdgeInsets.all(0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).background,
@@ -80,36 +80,42 @@ class _MenuWidgetState extends State<MenuWidget> {
                               .labelMedium
                               .fontStyle,
                         ),
-                        color: valueOrDefault<Color>(
-                          FFAppState().paginaActual == 'Agenda'
-                              ? FlutterFlowTheme.of(context).botonesYEnlaces
-                              : FlutterFlowTheme.of(context).secondaryText,
-                          FlutterFlowTheme.of(context).botonesYEnlaces,
-                        ),
+                        color: FFAppState().paginaActual == 'agenda'
+                            ? FlutterFlowTheme.of(context).darkVibrantColor
+                            : FlutterFlowTheme.of(context)
+                                .colorSecundarioTextos,
+                        fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                         fontStyle:
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: BorderSide(
+                    color: FFAppState().paginaActual == 'mas'
+                        ? FlutterFlowTheme.of(context).colorBorde
+                        : FlutterFlowTheme.of(context).background,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
               FFButtonWidget(
                 onPressed: () async {
-                  FFAppState().paginaActual = 'Clientas';
+                  FFAppState().paginaActual = 'clientas';
                   safeSetState(() {});
 
                   context.pushNamed(ClientaPageWidget.routeName);
                 },
                 text: 'Clientas',
                 options: FFButtonOptions(
-                  width: MediaQuery.sizeOf(context).width * 0.18,
+                  width: MediaQuery.sizeOf(context).width * 0.22,
                   height: 40.0,
-                  padding: EdgeInsets.all(0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).background,
+                  color: FFAppState().paginaActual == 'clientas'
+                      ? FlutterFlowTheme.of(context).colorBorde
+                      : FlutterFlowTheme.of(context).background,
                   textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         font: GoogleFonts.inter(
                           fontWeight: FontWeight.w600,
@@ -117,33 +123,37 @@ class _MenuWidgetState extends State<MenuWidget> {
                               .labelMedium
                               .fontStyle,
                         ),
-                        color: FFAppState().paginaActual == 'Clientas'
-                            ? FlutterFlowTheme.of(context).botonesYEnlaces
-                            : FlutterFlowTheme.of(context).secondaryText,
+                        color: FFAppState().paginaActual == 'clientas'
+                            ? FlutterFlowTheme.of(context).darkVibrantColor
+                            : FlutterFlowTheme.of(context)
+                                .colorSecundarioTextos,
+                        fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                         fontStyle:
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
               FFButtonWidget(
                 onPressed: () async {
-                  FFAppState().paginaActual = 'Cobros';
+                  FFAppState().paginaActual = 'cobros';
                   safeSetState(() {});
 
                   context.pushNamed(CobrosPageWidget.routeName);
                 },
                 text: 'Cobros',
                 options: FFButtonOptions(
-                  width: MediaQuery.sizeOf(context).width * 0.18,
+                  width: MediaQuery.sizeOf(context).width * 0.22,
                   height: 40.0,
-                  padding: EdgeInsets.all(0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).background,
+                  color: FFAppState().paginaActual == 'cobros'
+                      ? FlutterFlowTheme.of(context).colorBorde
+                      : FlutterFlowTheme.of(context).background,
                   textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         font: GoogleFonts.inter(
                           fontWeight: FontWeight.w600,
@@ -151,50 +161,18 @@ class _MenuWidgetState extends State<MenuWidget> {
                               .labelMedium
                               .fontStyle,
                         ),
-                        color: FFAppState().paginaActual == 'Cobros'
-                            ? FlutterFlowTheme.of(context).botonesYEnlaces
-                            : FlutterFlowTheme.of(context).secondaryText,
+                        color: FFAppState().paginaActual == 'cobros'
+                            ? FlutterFlowTheme.of(context).darkVibrantColor
+                            : FlutterFlowTheme.of(context)
+                                .colorSecundarioTextos,
+                        fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                         fontStyle:
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-              ),
-              FFButtonWidget(
-                onPressed: () async {
-                  FFAppState().paginaActual = 'Inventario';
-                  safeSetState(() {});
-
-                  context.pushNamed(InventarioPageWidget.routeName);
-                },
-                text: 'Inventario',
-                options: FFButtonOptions(
-                  width: MediaQuery.sizeOf(context).width * 0.18,
-                  height: 40.0,
-                  padding: EdgeInsets.all(0.0),
-                  iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).background,
-                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
-                        color: FFAppState().paginaActual == 'Inventario'
-                            ? FlutterFlowTheme.of(context).botonesYEnlaces
-                            : FlutterFlowTheme.of(context).secondaryText,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                      ),
-                  elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
               FFButtonWidget(
@@ -206,12 +184,14 @@ class _MenuWidgetState extends State<MenuWidget> {
                 },
                 text: 'Más',
                 options: FFButtonOptions(
-                  width: MediaQuery.sizeOf(context).width * 0.18,
+                  width: MediaQuery.sizeOf(context).width * 0.22,
                   height: 40.0,
-                  padding: EdgeInsets.all(0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).background,
+                  color: FFAppState().paginaActual == 'mas'
+                      ? FlutterFlowTheme.of(context).colorBorde
+                      : FlutterFlowTheme.of(context).background,
                   textStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         font: GoogleFonts.inter(
                           fontWeight: FontWeight.w600,
@@ -221,14 +201,16 @@ class _MenuWidgetState extends State<MenuWidget> {
                         ),
                         color: FFAppState().paginaActual == 'mas'
                             ? FlutterFlowTheme.of(context).botonesYEnlaces
-                            : FlutterFlowTheme.of(context).secondaryText,
+                            : FlutterFlowTheme.of(context)
+                                .colorSecundarioTextos,
+                        fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                         fontStyle:
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
             ],

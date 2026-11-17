@@ -197,21 +197,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => NewUserWidget(),
         ),
         FFRoute(
-          name: NewClienteWidget.routeName,
-          path: NewClienteWidget.routePath,
-          builder: (context, params) => NewClienteWidget(),
+          name: NewClientaWidget.routeName,
+          path: NewClientaWidget.routePath,
+          builder: (context, params) => NewClientaWidget(),
         ),
         FFRoute(
-          name: DetalleClienteWidget.routeName,
-          path: DetalleClienteWidget.routePath,
-          builder: (context, params) => DetalleClienteWidget(),
-        ),
-        FFRoute(
-          name: ModificarClienteWidget.routeName,
-          path: ModificarClienteWidget.routePath,
-          builder: (context, params) => ModificarClienteWidget(
-            clienta: params.getParam(
-              'clienta',
+          name: ModificarClientaWidget.routeName,
+          path: ModificarClientaWidget.routePath,
+          builder: (context, params) => ModificarClientaWidget(
+            refClienta: params.getParam(
+              'refClienta',
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['clientas'],

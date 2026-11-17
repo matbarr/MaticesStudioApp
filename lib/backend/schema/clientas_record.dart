@@ -75,6 +75,16 @@ class ClientasRecord extends FirestoreRecord {
   String get motivoBloqueo => _motivoBloqueo ?? '';
   bool hasMotivoBloqueo() => _motivoBloqueo != null;
 
+  // "codigoPais" field.
+  String? _codigoPais;
+  String get codigoPais => _codigoPais ?? '';
+  bool hasCodigoPais() => _codigoPais != null;
+
+  // "telefonoNormalizado" field.
+  String? _telefonoNormalizado;
+  String get telefonoNormalizado => _telefonoNormalizado ?? '';
+  bool hasTelefonoNormalizado() => _telefonoNormalizado != null;
+
   void _initializeFields() {
     _nombre = snapshotData['nombre'] as String?;
     _telefono = snapshotData['telefono'] as String?;
@@ -88,6 +98,8 @@ class ClientasRecord extends FirestoreRecord {
     _fechaActualizacion = snapshotData['fechaActualizacion'] as DateTime?;
     _registradoPor = snapshotData['registradoPor'] as DocumentReference?;
     _motivoBloqueo = snapshotData['motivoBloqueo'] as String?;
+    _codigoPais = snapshotData['codigoPais'] as String?;
+    _telefonoNormalizado = snapshotData['telefonoNormalizado'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -136,6 +148,8 @@ Map<String, dynamic> createClientasRecordData({
   DateTime? fechaActualizacion,
   DocumentReference? registradoPor,
   String? motivoBloqueo,
+  String? codigoPais,
+  String? telefonoNormalizado,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -151,6 +165,8 @@ Map<String, dynamic> createClientasRecordData({
       'fechaActualizacion': fechaActualizacion,
       'registradoPor': registradoPor,
       'motivoBloqueo': motivoBloqueo,
+      'codigoPais': codigoPais,
+      'telefonoNormalizado': telefonoNormalizado,
     }.withoutNulls,
   );
 
@@ -173,7 +189,9 @@ class ClientasRecordDocumentEquality implements Equality<ClientasRecord> {
         e1?.fechaRegistro == e2?.fechaRegistro &&
         e1?.fechaActualizacion == e2?.fechaActualizacion &&
         e1?.registradoPor == e2?.registradoPor &&
-        e1?.motivoBloqueo == e2?.motivoBloqueo;
+        e1?.motivoBloqueo == e2?.motivoBloqueo &&
+        e1?.codigoPais == e2?.codigoPais &&
+        e1?.telefonoNormalizado == e2?.telefonoNormalizado;
   }
 
   @override
@@ -189,7 +207,9 @@ class ClientasRecordDocumentEquality implements Equality<ClientasRecord> {
         e?.fechaRegistro,
         e?.fechaActualizacion,
         e?.registradoPor,
-        e?.motivoBloqueo
+        e?.motivoBloqueo,
+        e?.codigoPais,
+        e?.telefonoNormalizado
       ]);
 
   @override

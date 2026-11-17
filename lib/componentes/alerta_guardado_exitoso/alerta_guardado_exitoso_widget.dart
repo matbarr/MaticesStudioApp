@@ -51,7 +51,7 @@ class _AlertaGuardadoExitosoWidgetState
           width: MediaQuery.sizeOf(context).width * 0.9,
           height: MediaQuery.sizeOf(context).height * 0.25,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).containerColor,
+            color: FlutterFlowTheme.of(context).cardColor,
             borderRadius: BorderRadius.circular(14.0),
           ),
           alignment: AlignmentDirectional(0.0, 0.0),

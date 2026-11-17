@@ -293,144 +293,110 @@ class _ClientaPageWidgetState extends State<ClientaPageWidget> {
                   ),
                 ),
                 Expanded(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 10.0, 0.0, 10.0),
-                        child: StreamBuilder<List<ClientasRecord>>(
-                          stream: queryClientasRecord(
-                            queryBuilder: (clientasRecord) =>
-                                clientasRecord.orderBy('nombre'),
+                  child: StreamBuilder<List<ClientasRecord>>(
+                    stream: queryClientasRecord(
+                      queryBuilder: (clientasRecord) =>
+                          clientasRecord.orderBy('nombre'),
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
                           ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            List<ClientasRecord> listViewClientasRecordList =
-                                snapshot.data!;
+                        );
+                      }
+                      List<ClientasRecord> citasClientasRecordList =
+                          snapshot.data!;
 
-                            return ListView.builder(
+                      return Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: List.generate(citasClientasRecordList.length,
+                            (citasIndex) {
+                          final citasClientasRecord =
+                              citasClientasRecordList[citasIndex];
+                          return Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 10.0),
+                            child: ListView(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
-                              itemCount: listViewClientasRecordList.length,
-                              itemBuilder: (context, listViewIndex) {
-                                final listViewClientasRecord =
-                                    listViewClientasRecordList[listViewIndex];
-                                return Visibility(
-                                  visible: (String? filtro, String? nombre,
-                                          String? tel) {
-                                    return (filtro ?? '').isEmpty ||
-                                        (nombre ?? '')
-                                            .toLowerCase()
-                                            .contains(filtro!.toLowerCase()) ||
-                                        (tel ?? '').contains(filtro);
-                                  }(
-                                      _model.flitroNomTelTextController.text,
-                                      listViewClientasRecord.nombre,
-                                      listViewClientasRecord.telefono),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        ClientaDetallePageWidget.routeName,
-                                        queryParameters: {
-                                          'clienta': serializeParam(
-                                            listViewClientasRecord.reference,
-                                            ParamType.DocumentReference,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                    child: Slidable(
-                                      endActionPane: ActionPane(
-                                        motion: const ScrollMotion(),
-                                        extentRatio: 0.75,
-                                        children: [
-                                          SlidableAction(
-                                            label: 'Detalles',
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .completadaColor,
-                                            icon: Icons.visibility,
-                                            onPressed: (_) {
-                                              print(
-                                                  'SlidableActionWidget pressed ...');
-                                            },
-                                          ),
-                                          SlidableAction(
-                                            label: 'Editar',
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .pendienteColor,
-                                            icon: Icons.edit,
-                                            onPressed: (_) async {
-                                              context.pushNamed(
-                                                ModificarClienteWidget
-                                                    .routeName,
-                                                queryParameters: {
-                                                  'clienta': serializeParam(
-                                                    listViewClientasRecord
-                                                        .reference,
-                                                    ParamType.DocumentReference,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                          ),
-                                          SlidableAction(
-                                            label: 'Eliminar',
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .canceladaColor,
-                                            icon: Icons.delete_outline_rounded,
-                                            onPressed: (_) {
-                                              print(
-                                                  'SlidableActionWidget pressed ...');
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        child: ListTile(
-                                          title: Text(
-                                            listViewClientasRecord.nombre,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleLarge
-                                                .override(
-                                                  font: GoogleFonts.interTight(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleLarge
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .colorPrincipalTextos,
-                                                  letterSpacing: 0.0,
+                              children: [
+                                if ((String? filtro, String? nombre,
+                                        String? tel) {
+                                  return (filtro ?? '').isEmpty ||
+                                      (nombre ?? '')
+                                          .toLowerCase()
+                                          .contains(filtro!.toLowerCase()) ||
+                                      (tel ?? '').contains(filtro);
+                                }(
+                                    _model.flitroNomTelTextController.text,
+                                    citasClientasRecord.nombre,
+                                    citasClientasRecord.telefono))
+                                  Slidable(
+                                    endActionPane: ActionPane(
+                                      motion: const ScrollMotion(),
+                                      extentRatio: 0.75,
+                                      children: [
+                                        SlidableAction(
+                                          label: 'Detalles',
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .cardColor,
+                                          icon: Icons.visibility,
+                                          onPressed: (_) {
+                                            print(
+                                                'SlidableActionWidget pressed ...');
+                                          },
+                                        ),
+                                        SlidableAction(
+                                          label: 'Editar',
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .cardColor,
+                                          icon: Icons.edit,
+                                          onPressed: (_) async {
+                                            context.pushNamed(
+                                              ModificarClientaWidget.routeName,
+                                              queryParameters: {
+                                                'refClienta': serializeParam(
+                                                  citasClientasRecord.reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                        ),
+                                        SlidableAction(
+                                          label: 'Eliminar',
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .cardColor,
+                                          icon: Icons.delete_outline_rounded,
+                                          onPressed: (_) {
+                                            print(
+                                                'SlidableActionWidget pressed ...');
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                    child: Material(
+                                      color: Colors.transparent,
+                                      child: ListTile(
+                                        title: Text(
+                                          citasClientasRecord.nombre,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleLarge
+                                              .override(
+                                                font: GoogleFonts.interTight(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -442,28 +408,27 @@ class _ClientaPageWidgetState extends State<ClientaPageWidget> {
                                                           .titleLarge
                                                           .fontStyle,
                                                 ),
-                                          ),
-                                          subtitle: Text(
-                                            listViewClientasRecord.telefono,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium
-                                                .override(
-                                                  font: GoogleFonts.inter(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .colorSecundarioTextos,
-                                                  letterSpacing: 0.0,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .colorPrincipalTextos,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                        subtitle: Text(
+                                          citasClientasRecord
+                                              .telefonoNormalizado,
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelMedium
+                                              .override(
+                                                font: GoogleFonts.inter(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -475,33 +440,44 @@ class _ClientaPageWidgetState extends State<ClientaPageWidget> {
                                                           .labelMedium
                                                           .fontStyle,
                                                 ),
-                                          ),
-                                          trailing: Icon(
-                                            Icons.arrow_forward_ios_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            size: 24.0,
-                                          ),
-                                          tileColor: Color(0xFFF9F8EE),
-                                          dense: false,
-                                          contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 12.0, 0.0),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .colorSecundarioTextos,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                        trailing: Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        tileColor: Color(0xFFF9F8EE),
+                                        dense: false,
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                12.0, 0.0, 12.0, 0.0),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
                                     ),
                                   ),
-                                );
-                              },
-                            );
-                          },
-                        ),
-                      ),
-                    ],
+                              ],
+                            ),
+                          );
+                        }),
+                      );
+                    },
                   ),
                 ),
                 Padding(
@@ -513,7 +489,7 @@ class _ClientaPageWidgetState extends State<ClientaPageWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(NewClienteWidget.routeName);
+                          context.pushNamed(NewClientaWidget.routeName);
                         },
                         text: '+ Nueva clienta',
                         options: FFButtonOptions(
