@@ -38,3 +38,5 @@ export '/pages/clientas/new_clienta/new_clienta_widget.dart'
     show NewClientaWidget;
 export '/pages/clientas/modificar_clienta/modificar_clienta_widget.dart'
     show ModificarClientaWidget;
+export '/pages/administracion/servicios/productos/productos_widget.dart'
+    show ProductosWidget;
