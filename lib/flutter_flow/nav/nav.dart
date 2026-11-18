@@ -165,14 +165,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PersonalYRolesWidget(),
         ),
         FFRoute(
-          name: SHistorialFinancieroWidget.routeName,
-          path: SHistorialFinancieroWidget.routePath,
-          builder: (context, params) => SHistorialFinancieroWidget(),
+          name: HistorialFinancieroWidget.routeName,
+          path: HistorialFinancieroWidget.routePath,
+          builder: (context, params) => HistorialFinancieroWidget(),
         ),
         FFRoute(
-          name: SInventarioWidget.routeName,
-          path: SInventarioWidget.routePath,
-          builder: (context, params) => SInventarioWidget(),
+          name: InventarioWidget.routeName,
+          path: InventarioWidget.routePath,
+          builder: (context, params) => InventarioWidget(),
         ),
         FFRoute(
           name: ClientaDetallePageWidget.routeName,

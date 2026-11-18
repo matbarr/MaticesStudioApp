@@ -5,30 +5,29 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 's_historial_financiero_model.dart';
-export 's_historial_financiero_model.dart';
+import 'historial_financiero_model.dart';
+export 'historial_financiero_model.dart';
 
-class SHistorialFinancieroWidget extends StatefulWidget {
-  const SHistorialFinancieroWidget({super.key});
+class HistorialFinancieroWidget extends StatefulWidget {
+  const HistorialFinancieroWidget({super.key});
 
-  static String routeName = 'SHistorialFinanciero';
-  static String routePath = '/sHistorialFinanciero';
+  static String routeName = 'HistorialFinanciero';
+  static String routePath = '/historialFinanciero';
 
   @override
-  State<SHistorialFinancieroWidget> createState() =>
-      _SHistorialFinancieroWidgetState();
+  State<HistorialFinancieroWidget> createState() =>
+      _HistorialFinancieroWidgetState();
 }
 
-class _SHistorialFinancieroWidgetState
-    extends State<SHistorialFinancieroWidget> {
-  late SHistorialFinancieroModel _model;
+class _HistorialFinancieroWidgetState extends State<HistorialFinancieroWidget> {
+  late HistorialFinancieroModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SHistorialFinancieroModel());
+    _model = createModel(context, () => HistorialFinancieroModel());
   }
 
   @override

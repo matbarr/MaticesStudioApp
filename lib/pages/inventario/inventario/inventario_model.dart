@@ -1,10 +1,9 @@
 import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 's_historial_financiero_widget.dart' show SHistorialFinancieroWidget;
+import 'inventario_widget.dart' show InventarioWidget;
 import 'package:flutter/material.dart';
 
-class SHistorialFinancieroModel
-    extends FlutterFlowModel<SHistorialFinancieroWidget> {
+class InventarioModel extends FlutterFlowModel<InventarioWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for menu component.
