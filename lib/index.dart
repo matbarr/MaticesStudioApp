@@ -24,10 +24,10 @@ export '/pages/administracion/servicios/servicios/servicios_widget.dart'
     show ServiciosWidget;
 export '/pages/administracion/personal/personal_y_roles/personal_y_roles_widget.dart'
     show PersonalYRolesWidget;
-export '/pages/administracion/reportes/s_historial_financiero/s_historial_financiero_widget.dart'
-    show SHistorialFinancieroWidget;
-export '/pages/inventario/s_inventario/s_inventario_widget.dart'
-    show SInventarioWidget;
+export '/pages/administracion/reportes/historial_financiero/historial_financiero_widget.dart'
+    show HistorialFinancieroWidget;
+export '/pages/inventario/inventario/inventario_widget.dart'
+    show InventarioWidget;
 export '/pages/sin_cuenta/clienta_detalle_page/clienta_detalle_page_widget.dart'
     show ClientaDetallePageWidget;
 export '/pages/administracion/administracion_page/administracion_page_widget.dart'

@@ -5,28 +5,28 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 's_inventario_model.dart';
-export 's_inventario_model.dart';
+import 'inventario_model.dart';
+export 'inventario_model.dart';
 
-class SInventarioWidget extends StatefulWidget {
-  const SInventarioWidget({super.key});
+class InventarioWidget extends StatefulWidget {
+  const InventarioWidget({super.key});
 
-  static String routeName = 'SInventario';
-  static String routePath = '/sInventario';
+  static String routeName = 'Inventario';
+  static String routePath = '/inventario';
 
   @override
-  State<SInventarioWidget> createState() => _SInventarioWidgetState();
+  State<InventarioWidget> createState() => _InventarioWidgetState();
 }
 
-class _SInventarioWidgetState extends State<SInventarioWidget> {
-  late SInventarioModel _model;
+class _InventarioWidgetState extends State<InventarioWidget> {
+  late InventarioModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SInventarioModel());
+    _model = createModel(context, () => InventarioModel());
   }
 
   @override
