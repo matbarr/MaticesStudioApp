@@ -217,6 +217,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ProductosWidget.routeName,
           path: ProductosWidget.routePath,
           builder: (context, params) => ProductosWidget(),
+        ),
+        FFRoute(
+          name: ModificarUsuarioWidget.routeName,
+          path: ModificarUsuarioWidget.routePath,
+          builder: (context, params) => ModificarUsuarioWidget(
+            refUsuario: params.getParam(
+              'refUsuario',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['usuarios'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
