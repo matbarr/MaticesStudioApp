@@ -40,3 +40,5 @@ export '/pages/clientas/modificar_clienta/modificar_clienta_widget.dart'
     show ModificarClientaWidget;
 export '/pages/administracion/servicios/productos/productos_widget.dart'
     show ProductosWidget;
+export '/pages/administracion/personal/modificar_usuario/modificar_usuario_widget.dart'
+    show ModificarUsuarioWidget;

@@ -169,9 +169,17 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                           label: 'Editar',
                                           backgroundColor: Color(0xFFF9F8EE),
                                           icon: Icons.edit,
-                                          onPressed: (_) {
-                                            print(
-                                                'SlidableActionWidget pressed ...');
+                                          onPressed: (_) async {
+                                            context.pushNamed(
+                                              ModificarUsuarioWidget.routeName,
+                                              queryParameters: {
+                                                'refUsuario': serializeParam(
+                                                  listViewUsuariosRecord
+                                                      .reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
                                           },
                                         ),
                                         SlidableAction(
