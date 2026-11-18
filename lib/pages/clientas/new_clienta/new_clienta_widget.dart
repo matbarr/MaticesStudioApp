@@ -49,7 +49,9 @@ class _NewClientaWidgetState extends State<NewClientaWidget> {
     _model.telefonoCampoTextController ??= TextEditingController();
     _model.telefonoCampoFocusNode ??= FocusNode();
 
-    _model.telefonoCampoMask = MaskTextInputFormatter(mask: '#### ####');
+    _model.telefonoCampoMask = MaskTextInputFormatter(
+        mask: '#### ####',
+        initialText: _model.telefonoCampoTextController?.text);
     _model.observacionCampoTextController ??= TextEditingController();
     _model.observacionCampoFocusNode ??= FocusNode();
   }

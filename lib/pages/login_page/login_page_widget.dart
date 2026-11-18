@@ -36,7 +36,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textFieldMask2 = MaskTextInputFormatter(mask: '#### ####');
+    _model.textFieldMask2 = MaskTextInputFormatter(
+        mask: '#### ####', initialText: _model.textController2?.text);
     _model.cod1TextController ??= TextEditingController();
     _model.cod1FocusNode ??= FocusNode();
 

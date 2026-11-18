@@ -212,6 +212,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['clientas'],
             ),
           ),
+        ),
+        FFRoute(
+          name: ProductosWidget.routeName,
+          path: ProductosWidget.routePath,
+          builder: (context, params) => ProductosWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
