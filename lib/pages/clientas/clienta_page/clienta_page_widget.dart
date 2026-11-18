@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/componentes/client_view/client_view_widget.dart';
 import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/ff_builtin_enums.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -352,9 +353,42 @@ class _ClientaPageWidgetState extends State<ClientaPageWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .cardColor,
                                           icon: Icons.visibility,
-                                          onPressed: (_) {
-                                            print(
-                                                'SlidableActionWidget pressed ...');
+                                          onPressed: (_) async {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              enableDrag: false,
+                                              context: context,
+                                              builder: (context) {
+                                                return GestureDetector(
+                                                  onTap: () {
+                                                    FocusScope.of(context)
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Container(
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.4,
+                                                      child: ClientViewWidget(
+                                                        refClient:
+                                                            citasClientasRecord
+                                                                .reference,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            ).then(
+                                                (value) => safeSetState(() {}));
                                           },
                                         ),
                                         SlidableAction(
@@ -381,9 +415,9 @@ class _ClientaPageWidgetState extends State<ClientaPageWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .cardColor,
                                           icon: Icons.delete_outline_rounded,
-                                          onPressed: (_) {
-                                            print(
-                                                'SlidableActionWidget pressed ...');
+                                          onPressed: (_) async {
+                                            await citasClientasRecord.reference
+                                                .delete();
                                           },
                                         ),
                                       ],

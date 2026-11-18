@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/componentes/menu/menu_widget.dart';
+import '/componentes/personal_view/personal_view_widget.dart';
 import '/flutter_flow/ff_builtin_enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -160,9 +161,42 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                           label: 'Detalles',
                                           backgroundColor: Color(0xFFF9F8EE),
                                           icon: Icons.visibility,
-                                          onPressed: (_) {
-                                            print(
-                                                'SlidableActionWidget pressed ...');
+                                          onPressed: (_) async {
+                                            await showModalBottomSheet(
+                                              isScrollControlled: true,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              enableDrag: false,
+                                              context: context,
+                                              builder: (context) {
+                                                return GestureDetector(
+                                                  onTap: () {
+                                                    FocusScope.of(context)
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child: Container(
+                                                      height: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .height *
+                                                          0.4,
+                                                      child: PersonalViewWidget(
+                                                        refPersonal:
+                                                            listViewUsuariosRecord
+                                                                .reference,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            ).then(
+                                                (value) => safeSetState(() {}));
                                           },
                                         ),
                                         SlidableAction(
@@ -186,9 +220,10 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                           label: 'Eliminar',
                                           backgroundColor: Color(0xFFF9F8EE),
                                           icon: Icons.delete_outline_rounded,
-                                          onPressed: (_) {
-                                            print(
-                                                'SlidableActionWidget pressed ...');
+                                          onPressed: (_) async {
+                                            await listViewUsuariosRecord
+                                                .reference
+                                                .delete();
                                           },
                                         ),
                                       ],

@@ -30,6 +30,8 @@ class ModificarUsuarioModel extends FlutterFlowModel<ModificarUsuarioWidget> {
   TextEditingController? telefonoCampoTextController;
   late MaskTextInputFormatter telefonoCampoMask;
   String? Function(BuildContext, String?)? telefonoCampoTextControllerValidator;
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
   // Model for menu component.
   late MenuModel menuModel;
 

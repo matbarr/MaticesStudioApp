@@ -812,6 +812,91 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                               ],
                             ),
                           ),
+                          Align(
+                            alignment: AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 5.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment:
+                                    (FFCrossAxisAlignment.start).flutterValue,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 5.0),
+                                        child: Text(
+                                          'Activo',
+                                          style: FlutterFlowTheme.of(context)
+                                              .labelLarge
+                                              .override(
+                                                font: GoogleFonts.inter(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelLarge
+                                                          .fontStyle,
+                                                ),
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .fontStyle,
+                                              ),
+                                        ),
+                                      ),
+                                      Theme(
+                                        data: ThemeData(
+                                          checkboxTheme: CheckboxThemeData(
+                                            visualDensity:
+                                                VisualDensity.compact,
+                                            materialTapTargetSize:
+                                                MaterialTapTargetSize
+                                                    .shrinkWrap,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                            ),
+                                          ),
+                                          unselectedWidgetColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                        ),
+                                        child: Checkbox(
+                                          value: _model.checkboxValue ??= true,
+                                          onChanged: (newValue) async {
+                                            safeSetState(() => _model
+                                                .checkboxValue = newValue!);
+                                          },
+                                          side: (FlutterFlowTheme.of(context)
+                                                      .alternate !=
+                                                  null)
+                                              ? BorderSide(
+                                                  width: 2,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                )
+                                              : null,
+                                          activeColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          checkColor:
+                                              FlutterFlowTheme.of(context).info,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -828,7 +913,7 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                     .update(createUsuariosRecordData(
                                   nombre:
                                       _model.telefonoCampoTextController.text,
-                                  activo: true,
+                                  activo: _model.checkboxValue,
                                   apellidos:
                                       _model.apellidosCamposTextController.text,
                                   rol: '',
