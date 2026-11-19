@@ -6,28 +6,28 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'inventario_model.dart';
-export 'inventario_model.dart';
+import 'inventario_page_model.dart';
+export 'inventario_page_model.dart';
 
-class InventarioWidget extends StatefulWidget {
-  const InventarioWidget({super.key});
+class InventarioPageWidget extends StatefulWidget {
+  const InventarioPageWidget({super.key});
 
-  static String routeName = 'Inventario';
-  static String routePath = '/inventario';
+  static String routeName = 'InventarioPage';
+  static String routePath = '/inventarioPage';
 
   @override
-  State<InventarioWidget> createState() => _InventarioWidgetState();
+  State<InventarioPageWidget> createState() => _InventarioPageWidgetState();
 }
 
-class _InventarioWidgetState extends State<InventarioWidget> {
-  late InventarioModel _model;
+class _InventarioPageWidgetState extends State<InventarioPageWidget> {
+  late InventarioPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => InventarioModel());
+    _model = createModel(context, () => InventarioPageModel());
   }
 
   @override
@@ -50,7 +50,7 @@ class _InventarioWidgetState extends State<InventarioWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: (FFMainAxisAlignment.spaceEvenly).flutterValue,
@@ -68,77 +68,86 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                         child: Text(
                           'Productos del salón',
                           style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                              FlutterFlowTheme.of(context).bodyLarge.override(
                                     font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .fontStyle,
                                     ),
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .fontStyle,
                                   ),
                         ),
                       ),
                       Align(
                         alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Text(
-                          'Inventario',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 25.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
+                          child: Text(
+                            'Inventario',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
+                                  font: GoogleFonts.interTight(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .headlineLarge
                                         .fontStyle,
                                   ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
+                                ),
+                          ),
                         ),
                       ),
                       Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
                         height: 60.0,
                         decoration: BoxDecoration(
-                          color: Color(0xFFF6E4AF),
+                          color: FlutterFlowTheme.of(context).avisoColor,
                           borderRadius: BorderRadius.circular(10.0),
                         ),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
                           child: Text(
                             'N productos se están agotando',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.inter(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  color: Color(0xFF616A71),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .avisoTextColor,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .fontStyle,
+                                    ),
                           ),
                         ),
                       ),
@@ -177,11 +186,15 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 70.0,
+                                width: MediaQuery.sizeOf(context).width * 0.9,
+                                height: 100.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0xFFF9F8EE),
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  color: FlutterFlowTheme.of(context).cardColor,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(
+                                    color:
+                                        FlutterFlowTheme.of(context).colorBorde,
+                                  ),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -225,6 +238,7 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .colorPrincipalTextos,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -232,6 +246,44 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                                TextSpan(
+                                                  text: '\n',
+                                                  style: TextStyle(),
+                                                ),
+                                                TextSpan(
+                                                  text: 'Cantidad: ',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .colorPrincipalTextos,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
                                                                 .fontStyle,
                                                       ),
                                                 ),
@@ -245,7 +297,7 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                                       .override(
                                                         font: GoogleFonts.inter(
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.normal,
                                                           fontStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -254,16 +306,21 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                                         ),
                                                         color: FlutterFlowTheme
                                                                 .of(context)
-                                                            .colorSecundarioTextos,
+                                                            .colorPrincipalTextos,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
-                                                            FontWeight.w600,
+                                                            FontWeight.normal,
                                                         fontStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMedium
                                                                 .fontStyle,
                                                       ),
+                                                ),
+                                                TextSpan(
+                                                  text: '\n',
+                                                  style: TextStyle(),
                                                 ),
                                                 TextSpan(
                                                   text: citasProductosRecord
@@ -284,6 +341,10 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                                                   .bodyMedium
                                                                   .fontStyle,
                                                         ),
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .colorSecundarioTextos,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
@@ -346,43 +407,25 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 0.2,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.03,
+                                            height: 40.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .confirmadaColor,
                                               borderRadius:
-                                                  BorderRadius.circular(20.0),
+                                                  BorderRadius.circular(10.0),
                                             ),
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                citasProductosRecord.activo
-                                                    .toString(),
-                                                textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          letterSpacing: 0.0,
+                                            child: Text(
+                                              citasProductosRecord.activo
+                                                  .toString(),
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font: GoogleFonts.inter(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -394,7 +437,22 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                                                   .bodyMedium
                                                                   .fontStyle,
                                                         ),
-                                              ),
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .estadoTextColor,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -425,8 +483,8 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                             },
                             text: '+ Nuevo producto',
                             options: FFButtonOptions(
-                              width: MediaQuery.sizeOf(context).width * 0.5,
-                              height: 40.0,
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              height: 50.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -444,7 +502,9 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                           .titleSmall
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFFF8F6EF),
+                                    color:
+                                        FlutterFlowTheme.of(context).background,
+                                    fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -454,7 +514,7 @@ class _InventarioWidgetState extends State<InventarioWidget> {
                                         .fontStyle,
                                   ),
                               elevation: 0.0,
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),

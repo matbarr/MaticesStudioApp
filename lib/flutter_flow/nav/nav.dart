@@ -133,11 +133,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CobrosPageWidget(),
         ),
         FFRoute(
-          name: InventarioPageWidget.routeName,
-          path: InventarioPageWidget.routePath,
-          builder: (context, params) => InventarioPageWidget(),
-        ),
-        FFRoute(
           name: HorariosPageWidget.routeName,
           path: HorariosPageWidget.routePath,
           builder: (context, params) => HorariosPageWidget(),
@@ -170,9 +165,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HistorialFinancieroWidget(),
         ),
         FFRoute(
-          name: InventarioWidget.routeName,
-          path: InventarioWidget.routePath,
-          builder: (context, params) => InventarioWidget(),
+          name: InventarioPageWidget.routeName,
+          path: InventarioPageWidget.routePath,
+          builder: (context, params) => InventarioPageWidget(),
         ),
         FFRoute(
           name: ClientaDetallePageWidget.routeName,

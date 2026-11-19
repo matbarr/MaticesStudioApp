@@ -1,3 +1,4 @@
+import '/componentes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'horarios_page_widget.dart' show HorariosPageWidget;
 import 'package:flutter/material.dart';
@@ -12,11 +13,17 @@ class HorariosPageModel extends FlutterFlowModel<HorariosPageWidget> {
   int get tabBarPreviousIndex =>
       tabBarController != null ? tabBarController!.previousIndex : 0;
 
+  // Model for menu component.
+  late MenuModel menuModel;
+
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    menuModel = createModel(context, () => MenuModel());
+  }
 
   @override
   void dispose() {
     tabBarController?.dispose();
+    menuModel.dispose();
   }
 }

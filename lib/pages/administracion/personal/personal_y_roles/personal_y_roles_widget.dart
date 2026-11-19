@@ -71,44 +71,56 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                         child: Text(
                           'Cuentas internas',
                           style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                              FlutterFlowTheme.of(context).bodyLarge.override(
                                     font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .fontStyle,
                                     ),
+                                    color: FlutterFlowTheme.of(context)
+                                        .colorSecundarioTextos,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .fontStyle,
                                   ),
                         ),
                       ),
                       Align(
                         alignment: AlignmentDirectional(-1.0, 0.0),
-                        child: Text(
-                          'Personal y roles',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 25.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
+                          child: Text(
+                            'Personal y roles',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .override(
+                                  font: GoogleFonts.interTight(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineLarge
+                                        .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .headlineLarge
                                         .fontStyle,
                                   ),
+                                  color: FlutterFlowTheme.of(context)
+                                      .colorPrincipalTextos,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .fontStyle,
+                                ),
+                          ),
                         ),
                       ),
                     ],
@@ -237,28 +249,31 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                             'Error al cargar el nombre',
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .titleMedium
+                                              .titleSmall
                                               .override(
                                                 font: GoogleFonts.interTight(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleMedium
+                                                          .titleSmall
                                                           .fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .titleMedium
+                                                          .titleSmall
                                                           .fontStyle,
                                                 ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .colorPrincipalTextos,
                                                 letterSpacing: 0.0,
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMedium
+                                                        .titleSmall
                                                         .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleMedium
+                                                        .titleSmall
                                                         .fontStyle,
                                               ),
                                         ),
@@ -282,6 +297,9 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                                           .labelMedium
                                                           .fontStyle,
                                                 ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .colorSecundarioTextos,
                                                 letterSpacing: 0.0,
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
@@ -299,14 +317,15 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                               .secondaryText,
                                           size: 24.0,
                                         ),
-                                        tileColor: Color(0xFFF9F8EE),
+                                        tileColor: FlutterFlowTheme.of(context)
+                                            .cardColor,
                                         dense: false,
                                         contentPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 12.0, 0.0, 12.0, 0.0),
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(12.0),
+                                              BorderRadius.circular(10.0),
                                         ),
                                       ),
                                     ),
@@ -351,40 +370,46 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                           0.9,
                                       height: 60.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFF6E4AF),
+                                        color: FlutterFlowTheme.of(context)
+                                            .avisoColor,
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
                                       alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsets.all(10.0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 5.0, 0.0),
                                         child: Text(
-                                          'Una cuenta desactivada no puede iniciar sesión.',
+                                          'Una cuenta desactivada\nNo puede iniciar sesión',
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .bodyLarge
                                               .override(
                                                 font: GoogleFonts.inter(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .bodyLarge
                                                           .fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .bodyLarge
                                                           .fontStyle,
                                                 ),
-                                                color: Color(0xFF616A71),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .avisoTextColor,
                                                 letterSpacing: 0.0,
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .fontStyle,
+                                                lineHeight: 1.5,
                                               ),
                                         ),
                                       ),
@@ -510,8 +535,8 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                             },
                             text: '+ Nueva persona',
                             options: FFButtonOptions(
-                              width: MediaQuery.sizeOf(context).width * 0.5,
-                              height: 40.0,
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              height: 50.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -529,7 +554,8 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                           .titleSmall
                                           .fontStyle,
                                     ),
-                                    color: Color(0xFFF8F6EF),
+                                    color:
+                                        FlutterFlowTheme.of(context).background,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -539,7 +565,7 @@ class _PersonalYRolesWidgetState extends State<PersonalYRolesWidget> {
                                         .fontStyle,
                                   ),
                               elevation: 0.0,
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),

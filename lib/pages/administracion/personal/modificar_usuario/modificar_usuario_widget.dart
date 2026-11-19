@@ -116,22 +116,24 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                               child: Text(
                                 'Modificar Personal',
                                 style: FlutterFlowTheme.of(context)
-                                    .headlineMedium
+                                    .headlineLarge
                                     .override(
                                       font: GoogleFonts.interTight(
                                         fontWeight: FlutterFlowTheme.of(context)
-                                            .headlineMedium
+                                            .headlineLarge
                                             .fontWeight,
                                         fontStyle: FlutterFlowTheme.of(context)
-                                            .headlineMedium
+                                            .headlineLarge
                                             .fontStyle,
                                       ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .colorPrincipalTextos,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .headlineMedium
+                                          .headlineLarge
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .headlineMedium
+                                          .headlineLarge
                                           .fontStyle,
                                     ),
                               ),
@@ -155,6 +157,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                             .bodyLarge
                                             .fontStyle,
                                       ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .colorPrincipalTextos,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
@@ -197,6 +201,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorSecundarioTextos,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -222,9 +228,35 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .colorSecundarioTextos,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: Color(0x00000000),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorBorde,
                                           width: 1.0,
                                         ),
                                         borderRadius:
@@ -258,29 +290,29 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .cardColor,
                                     ),
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .override(
                                           font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontStyle,
                                           ),
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
@@ -330,6 +362,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorSecundarioTextos,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -355,9 +389,35 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .colorSecundarioTextos,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: Color(0x00000000),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorBorde,
                                           width: 1.0,
                                         ),
                                         borderRadius:
@@ -391,29 +451,29 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .cardColor,
                                     ),
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .override(
                                           font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontStyle,
                                           ),
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
@@ -463,6 +523,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorSecundarioTextos,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -484,26 +546,26 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                   width: MediaQuery.sizeOf(context).width * 0.9,
                                   height: 40.0,
                                   textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                      .bodyLarge
                                       .override(
                                         font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
                                         color: FlutterFlowTheme.of(context)
                                             .colorPrincipalTextos,
                                         letterSpacing: 0.0,
                                         fontWeight: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .bodyLarge
                                             .fontWeight,
                                         fontStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .bodyLarge
                                             .fontStyle,
                                       ),
                                   hintText: 'Selecciona un rol',
@@ -513,10 +575,11 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                         .secondaryText,
                                     size: 24.0,
                                   ),
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor: Colors.transparent,
+                                  fillColor:
+                                      FlutterFlowTheme.of(context).cardColor,
+                                  elevation: 1.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).colorBorde,
                                   borderWidth: 0.0,
                                   borderRadius: 10.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
@@ -553,6 +616,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorSecundarioTextos,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -576,9 +641,35 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       isDense: true,
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .colorSecundarioTextos,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: Color(0x00000000),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorBorde,
                                           width: 1.0,
                                         ),
                                         borderRadius:
@@ -612,29 +703,29 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                          .cardColor,
                                     ),
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodyLarge
                                         .override(
                                           font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontStyle,
                                           ),
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontWeight,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
                                     keyboardType:
@@ -674,6 +765,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                     .labelLarge
                                                     .fontStyle,
                                           ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .colorSecundarioTextos,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -713,9 +806,42 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             isDense: true,
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .fontStyle,
+                                                      ),
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .colorSecundarioTextos,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontStyle,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: Color(0x00000000),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .colorBorde,
                                                 width: 1.0,
                                               ),
                                               borderRadius: BorderRadius.only(
@@ -765,31 +891,31 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                             filled: true,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
+                                                    .cardColor,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .bodyLarge
                                               .override(
                                                 font: GoogleFonts.inter(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .bodyLarge
                                                           .fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .bodyLarge
                                                           .fontStyle,
                                                 ),
                                                 letterSpacing: 0.0,
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .fontStyle,
                                               ),
                                           keyboardType: (FFKeyboardType.phone)
@@ -842,6 +968,9 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                           .labelLarge
                                                           .fontStyle,
                                                 ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .colorSecundarioTextos,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                                 fontStyle:
@@ -861,7 +990,7 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                                     .shrinkWrap,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(4.0),
+                                                  BorderRadius.circular(2.0),
                                             ),
                                           ),
                                           unselectedWidgetColor:
@@ -955,8 +1084,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                               },
                               text: 'Modificar',
                               options: FFButtonOptions(
-                                width: MediaQuery.sizeOf(context).width * 0.4,
-                                height: 40.0,
+                                width: MediaQuery.sizeOf(context).width * 0.45,
+                                height: 50.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -974,7 +1103,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                                             .titleSmall
                                             .fontStyle,
                                       ),
-                                      color: Color(0xFFF8F6EF),
+                                      color: FlutterFlowTheme.of(context)
+                                          .background,
                                       letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .titleSmall
@@ -998,8 +1128,8 @@ class _ModificarUsuarioWidgetState extends State<ModificarUsuarioWidget> {
                             },
                             text: 'Cancelar',
                             options: FFButtonOptions(
-                              width: MediaQuery.sizeOf(context).width * 0.4,
-                              height: 40.0,
+                              width: MediaQuery.sizeOf(context).width * 0.45,
+                              height: 50.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
