@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/componentes/editar_horario_personal_sheet/editar_horario_personal_sheet_widget.dart';
 import '/componentes/editar_horario_sheet/editar_horario_sheet_widget.dart';
+import '/componentes/menu/menu_widget.dart';
 import '/componentes/nuevo_bloqueo_sheet/nuevo_bloqueo_sheet_widget.dart';
 import '/flutter_flow/ff_builtin_enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -65,25 +66,28 @@ class _HorariosPageWidgetState extends State<HorariosPageWidget>
               crossAxisAlignment: (FFCrossAxisAlignment.start).flutterValue,
               textBaseline: TextBaseline.alphabetic,
               children: [
-                Text(
-                  'Horarios y bloqueos\n',
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        font: GoogleFonts.interTight(
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  child: Text(
+                    'Horarios y bloqueos',
+                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                          font: GoogleFonts.interTight(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .headlineLarge
+                                .fontStyle,
+                          ),
+                          letterSpacing: 0.0,
                           fontWeight: FlutterFlowTheme.of(context)
-                              .headlineMedium
+                              .headlineLarge
                               .fontWeight,
                           fontStyle: FlutterFlowTheme.of(context)
-                              .headlineMedium
+                              .headlineLarge
                               .fontStyle,
                         ),
-                        letterSpacing: 0.0,
-                        fontWeight: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .fontWeight,
-                        fontStyle: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .fontStyle,
-                      ),
+                  ),
                 ),
                 Expanded(
                   child: Column(
@@ -95,21 +99,22 @@ class _HorariosPageWidgetState extends State<HorariosPageWidget>
                           unselectedLabelColor:
                               FlutterFlowTheme.of(context).secondaryText,
                           labelStyle:
-                              FlutterFlowTheme.of(context).titleMedium.override(
+                              FlutterFlowTheme.of(context).titleSmall.override(
                                     font: GoogleFonts.interTight(
                                       fontWeight: FlutterFlowTheme.of(context)
-                                          .titleMedium
+                                          .titleSmall
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .titleMedium
+                                          .titleSmall
                                           .fontStyle,
                                     ),
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
-                                        .titleMedium
+                                        .titleSmall
                                         .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .titleMedium
+                                        .titleSmall
                                         .fontStyle,
                                   ),
                           unselectedLabelStyle:
@@ -122,6 +127,7 @@ class _HorariosPageWidgetState extends State<HorariosPageWidget>
                                           .titleMedium
                                           .fontStyle,
                                     ),
+                                    fontSize: 16.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleMedium
@@ -845,6 +851,11 @@ class _HorariosPageWidgetState extends State<HorariosPageWidget>
                       ),
                     ],
                   ),
+                ),
+                wrapWithModel(
+                  model: _model.menuModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: MenuWidget(),
                 ),
               ].divide(SizedBox(height: 12.0)),
             ),

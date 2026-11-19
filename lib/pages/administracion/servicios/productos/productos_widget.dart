@@ -103,24 +103,33 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                         children: [
                           Align(
                             alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Text(
-                              'Productos',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.inter(
-                                      fontWeight: FontWeight.bold,
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
+                              child: Text(
+                                'Productos',
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .headlineLarge
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .colorPrincipalTextos,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .headlineLarge
+                                          .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .headlineLarge
                                           .fontStyle,
                                     ),
-                                    fontSize: 25.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                              ),
                             ),
                           ),
                         ],
@@ -131,13 +140,18 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Container(
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    (FFMainAxisAlignment.spaceBetween)
+                                        .flutterValue,
+                                children: [
+                                  Container(
                                     width:
-                                        MediaQuery.sizeOf(context).width * 0.1,
+                                        MediaQuery.sizeOf(context).width * 0.45,
                                     child: TextFormField(
                                       controller: _model.textController ??=
                                           TextEditingController(
@@ -175,26 +189,29 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                       .fontStyle,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            .labelLarge
                                             .override(
                                               font: GoogleFonts.inter(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium
+                                                        .labelLarge
                                                         .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium
+                                                        .labelLarge
                                                         .fontStyle,
                                               ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .colorSecundarioTextos,
                                               letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium
+                                                      .labelLarge
                                                       .fontWeight,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium
+                                                      .labelLarge
                                                       .fontStyle,
                                             ),
                                         enabledBorder: OutlineInputBorder(
@@ -236,26 +253,28 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                             .cardColor,
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                          .bodyLarge
                                           .override(
                                             font: GoogleFonts.inter(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .bodyLarge
                                                       .fontWeight,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .bodyLarge
                                                       .fontStyle,
                                             ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .colorPrincipalTextos,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontWeight,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium
+                                                    .bodyLarge
                                                     .fontStyle,
                                           ),
                                       keyboardType:
@@ -267,47 +286,62 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                           .asValidator(context),
                                     ),
                                   ),
-                                ),
-                                FFButtonWidget(
-                                  onPressed: () async {
-                                    await productosConfiguracionRecord!
-                                        .reference
-                                        .update(createConfiguracionRecordData(
-                                      minimoInventario: int.tryParse(
-                                          _model.textController.text),
-                                    ));
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Minimo actualizado',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      await productosConfiguracionRecord!
+                                          .reference
+                                          .update(createConfiguracionRecordData(
+                                        minimoInventario: int.tryParse(
+                                            _model.textController.text),
+                                      ));
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Minimo actualizado',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
                                           ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .background,
                                         ),
-                                        duration: Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
+                                      );
+                                    },
+                                    text: 'Guardar minimo',
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.1,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .botonesYEnlaces,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.interTight(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
                                                 .background,
-                                      ),
-                                    );
-                                  },
-                                  text: 'Guardar minimo',
-                                  options: FFButtonOptions(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.1,
-                                    height: MediaQuery.sizeOf(context).height *
-                                        0.04,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context)
-                                        .botonesYEnlaces,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          font: GoogleFonts.interTight(
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -317,23 +351,12 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                     .titleSmall
                                                     .fontStyle,
                                           ),
-                                          color: Colors.white,
-                                          fontSize: 10.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontStyle,
-                                        ),
-                                    elevation: 0.0,
-                                    borderRadius: BorderRadius.circular(20.0),
+                                      elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             StreamBuilder<List<ProductosRecord>>(
                               stream: queryProductosRecord(
@@ -457,17 +480,18 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                                   .nombre,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium
+                                                              .bodyLarge
                                                               .override(
                                                                 font:
                                                                     GoogleFonts
                                                                         .inter(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium
+                                                                      .bodyLarge
                                                                       .fontStyle,
                                                                 ),
                                                                 color: FlutterFlowTheme.of(
@@ -475,12 +499,13 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                                     .colorPrincipalTextos,
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .fontWeight,
                                                                 fontStyle: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
+                                                                    .bodyLarge
                                                                     .fontStyle,
                                                               ),
                                                         ),

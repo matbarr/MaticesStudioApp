@@ -14,8 +14,6 @@ export '/pages/agenda/detalle_cita_page/detalle_cita_page_widget.dart'
     show DetalleCitaPageWidget;
 export '/pages/cobros/cobros_page/cobros_page_widget.dart'
     show CobrosPageWidget;
-export '/pages/inventario/inventario_page/inventario_page_widget.dart'
-    show InventarioPageWidget;
 export '/pages/administracion/horarios/horarios_page/horarios_page_widget.dart'
     show HorariosPageWidget;
 export '/pages/sin_cuenta/cobro_detalle_page/cobro_detalle_page_widget.dart'
@@ -26,8 +24,8 @@ export '/pages/administracion/personal/personal_y_roles/personal_y_roles_widget.
     show PersonalYRolesWidget;
 export '/pages/administracion/reportes/historial_financiero/historial_financiero_widget.dart'
     show HistorialFinancieroWidget;
-export '/pages/inventario/inventario/inventario_widget.dart'
-    show InventarioWidget;
+export '/pages/administracion/inventario/inventario_page/inventario_page_widget.dart'
+    show InventarioPageWidget;
 export '/pages/sin_cuenta/clienta_detalle_page/clienta_detalle_page_widget.dart'
     show ClientaDetallePageWidget;
 export '/pages/administracion/administracion_page/administracion_page_widget.dart'

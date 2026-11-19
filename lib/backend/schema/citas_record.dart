@@ -105,6 +105,11 @@ class CitasRecord extends FirestoreRecord {
   DocumentReference? get canceladoPor => _canceladoPor;
   bool hasCanceladoPor() => _canceladoPor != null;
 
+  // "nombreServicio" field.
+  String? _nombreServicio;
+  String get nombreServicio => _nombreServicio ?? '';
+  bool hasNombreServicio() => _nombreServicio != null;
+
   void _initializeFields() {
     _clienteRef = snapshotData['clienteRef'] as DocumentReference?;
     _empleadoRef = snapshotData['empleadoRef'] as DocumentReference?;
@@ -125,6 +130,7 @@ class CitasRecord extends FirestoreRecord {
     _fechaCancelacion = snapshotData['fechaCancelacion'] as DateTime?;
     _motivoCancelacion = snapshotData['motivoCancelacion'] as String?;
     _canceladoPor = snapshotData['canceladoPor'] as DocumentReference?;
+    _nombreServicio = snapshotData['nombreServicio'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -178,6 +184,7 @@ Map<String, dynamic> createCitasRecordData({
   DateTime? fechaCancelacion,
   String? motivoCancelacion,
   DocumentReference? canceladoPor,
+  String? nombreServicio,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -199,6 +206,7 @@ Map<String, dynamic> createCitasRecordData({
       'fechaCancelacion': fechaCancelacion,
       'motivoCancelacion': motivoCancelacion,
       'canceladoPor': canceladoPor,
+      'nombreServicio': nombreServicio,
     }.withoutNulls,
   );
 
@@ -227,7 +235,8 @@ class CitasRecordDocumentEquality implements Equality<CitasRecord> {
         e1?.creadoPor == e2?.creadoPor &&
         e1?.fechaCancelacion == e2?.fechaCancelacion &&
         e1?.motivoCancelacion == e2?.motivoCancelacion &&
-        e1?.canceladoPor == e2?.canceladoPor;
+        e1?.canceladoPor == e2?.canceladoPor &&
+        e1?.nombreServicio == e2?.nombreServicio;
   }
 
   @override
@@ -249,7 +258,8 @@ class CitasRecordDocumentEquality implements Equality<CitasRecord> {
         e?.creadoPor,
         e?.fechaCancelacion,
         e?.motivoCancelacion,
-        e?.canceladoPor
+        e?.canceladoPor,
+        e?.nombreServicio
       ]);
 
   @override
