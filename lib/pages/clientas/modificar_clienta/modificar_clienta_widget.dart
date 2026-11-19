@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componentes/alerta_guardado_exitoso/alerta_guardado_exitoso_widget.dart';
 import '/componentes/menu/menu_widget.dart';
@@ -1015,6 +1016,7 @@ class _ModificarClientaWidgetState extends State<ModificarClientaWidget> {
                                       _model.codigoCampoTextController.text,
                                   telefonoNormalizado:
                                       '${_model.codigoCampoTextController.text} ${_model.telefonoCampoTextController.text}',
+                                  registradoPor: currentUserReference,
                                 ));
                                 await showDialog(
                                   barrierColor: Color(0x3F8C9088),
