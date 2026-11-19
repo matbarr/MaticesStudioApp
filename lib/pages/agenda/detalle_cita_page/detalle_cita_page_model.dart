@@ -10,6 +10,7 @@ class DetalleCitaPageModel extends FlutterFlowModel<DetalleCitaPageWidget> {
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   CuentasRecord? nuevaCuenta;
+  DateTime? datePicked;
   // Model for menu component.
   late MenuModel menuModel;
 
